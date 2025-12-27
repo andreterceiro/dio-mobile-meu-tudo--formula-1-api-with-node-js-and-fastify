@@ -18,7 +18,11 @@ server.get("/drivers", async (request, response) => {
     return drivers;
 });
 
-server.get("/drivers/:id", async (request, response) => {
+interface DriverParams {
+    id: string
+}
+
+server.get<{Params: DriverParams}>("/drivers/:id", async (request, response) => {
     const id = parseInt(request.params.id);
     response.type("application/json").code(200);
     return drivers;
