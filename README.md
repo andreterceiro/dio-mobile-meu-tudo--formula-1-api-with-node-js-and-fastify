@@ -8,3 +8,8 @@ Why "**blue**? Teacher used this part in the name of the repository linking to t
 # Classes related to the project
 
 [link](https://web.dio.me/lab/criando-uma-minimal-api-da-formula-1-com-nodejs-e-fastify/learning/1e6df51d-8e03-4bb3-b19c-8a44b347e174)
+
+
+# Installed dependencies
+
+Until now we installed fastify.
