@@ -29,11 +29,10 @@ server.get<{Params: DriverParams}>("/drivers/:id", async (request, response) => 
     if (driver) {
         response.type("application/json").code(200);
         return {driver}
-    } else {
-        response.type("application/json").code(404);
-        return {message: "Driver not found"}
-    }
-    return drivers;
+    } 
+    
+    response.type("application/json").code(404);
+    return {message: "Driver not found"};
 });
 
 
