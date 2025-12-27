@@ -24,7 +24,15 @@ interface DriverParams {
 
 server.get<{Params: DriverParams}>("/drivers/:id", async (request, response) => {
     const id = parseInt(request.params.id);
-    response.type("application/json").code(200);
+    const driver = drivers.find(driver => driver.id === id);
+
+    if (driver) {
+        response.type("application/json").code(200);
+        return {driver}
+    } else {
+        response.type("application/json").code(404);
+        return {message: "Driver not found"}
+    }
     return drivers;
 });
 
