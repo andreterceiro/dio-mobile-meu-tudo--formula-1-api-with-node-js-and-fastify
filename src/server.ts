@@ -18,6 +18,13 @@ server.get("/drivers", async (request, response) => {
     return drivers;
 });
 
+server.get("/drivers/:id", async (request, response) => {
+    const id = parseInt(request.params.id);
+    response.type("application/json").code(200);
+    return drivers;
+});
+
+
 server.listen({port: 3000}, () => {
     console.log('server listen on the port 3000')
 })
